@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>MicheLangelo | Vinagre de Granada Artesanal - 5 años de tradición</title>
+    
+    <meta name="description" content="Vinagre de granada artesanal MicheLangelo. Elaborado en Viñales, Andalucía con más de 5 años de tradición. Producto natural con antioxidantes.">
+    <meta name="keywords" content="vinagre de granada, vinagre artesanal, granada, antioxidantes, producto gourmet, Viñales">
+    <meta name="author" content="MicheLangelo">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo.png">
+    <link rel="canonical" href="https://www.michelangelo-vinagre.com/">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Georgia', serif;
+            background-color: #f9f2ea;
+            color: #2e2e2e;
+            line-height: 1.5;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .barra-navegacion {
+            background: #b10d2f;
+            padding: 0.7rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            gap: 1rem;
+        }
+
+        .grupo-logo {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .imagen-logo {
+            height: 54px;
+            width: auto;
+            max-width: 170px;
+            object-fit: contain;
+            display: block;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        .texto-logo {
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: #f9f2ea;
+            letter-spacing: 1px;
+            font-family: 'Georgia', serif;
+            line-height: 1.2;
+        }
+
+        .texto-logo span {
+            font-size: 0.85rem;
+            font-weight: normal;
+            display: block;
+            letter-spacing: 1px;
+            color: #ffcdb5;
+        }
+
+        .enlaces-nav {
+            display: flex;
+            gap: 1.2rem;
+            list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .enlaces-nav li:not(:last-child)::after {
+            content: "|";
+            color: #ffcdb5;
+            opacity: 0.7;
+            margin-left: 1.2rem;
+            display: inline-block;
+        }
+        
+        .enlaces-nav a {
+            color: #f9f2ea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        
+        .enlaces-nav a:hover {
+            border-bottom-color: #ffcdb5;
+            color: #ffdec9;
+        }
+
+        @media (max-width: 850px) {
+            .barra-navegacion {
+                flex-direction: column;
+                text-align: center;
+            }
+            .enlaces-nav {
+                justify-content: center;
+                max-width: 450px;
+                margin: 0 auto;
+            }
+            .enlaces-nav li:not(:last-child)::after {
+                content: "•";
+                margin-left: 0.6rem;
+            }
+            .enlaces-nav a {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .enlaces-nav {
+                display: grid;
+                grid-template-columns: repeat(3, auto);
+                gap: 0.6rem 1rem;
+                justify-content: center;
+                max-width: 100%;
+            }
+            .enlaces-nav li {
+                text-align: center;
+            }
+            .enlaces-nav li:not(:last-child)::after {
+                content: "";
+                display: none;
+            }
+            .enlaces-nav a {
+                font-size: 1rem;
+                padding: 6px 0;
+                white-space: nowrap;
+            }
+            .texto-logo { font-size: 1.3rem; }
+            .imagen-logo { height: 44px; }
+        }
+
+        @media (max-width: 400px) {
+            .enlaces-nav a {
+                font-size: 0.9rem;
+            }
+        }
+
+        .banner-principal {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background: #7e152b;
+            line-height: 0;
+            overflow: hidden;
+        }
+        .imagen-banner {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            min-height: 320px;
+        }
+        @media (max-width: 768px) {
+            .imagen-banner { min-height: 280px; }
+        }
+
+        .contenedor {
+            max-width: 1300px;
+            margin: 2rem auto 0 auto;
+            padding: 0 6%;
+        }
+
+        .caja-historia, .caja-producto, .caja-tienda-digital {
+            background: white;
+            margin-bottom: 2.5rem;
+            padding: 2rem 2rem;
+            border-radius: 32px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid #eedbcb;
+        }
+
+        .dos-columnas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .columna-quienes, .columna-historia {
+            flex: 1;
+            min-width: 260px;
+        }
+        .separador-vertical {
+            width: 1px;
+            background: linear-gradient(180deg, #e6c9b5, #d4b49c, #e6c9b5);
+        }
+
+        h1 {
+            color: #b10d2f;
+            font-size: 1.8rem;
+            border-left: 5px solid #b10d2f;
+            padding-left: 1.2rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+        h2 {
+            color: #b10d2f;
+            margin: 0.5rem 0 1rem;
+            font-size: 1.4rem;
+        }
+        p {
+            color: #2e2e2e;
+            margin-bottom: 1rem;
+            line-height: 1.55;
+        }
+
+        .cuadricula-beneficios {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.5rem 0 0;
+        }
+        .categoria {
+            flex: 1;
+            min-width: 180px;
+            background: #fefaf6;
+            border-radius: 20px;
+            padding: 1rem 1.2rem;
+            border: 1px solid #eed3c2;
+        }
+        .categoria h3 {
+            color: #b10d2f;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            border-bottom: 2px solid #f0d8cc;
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+        .categoria ul {
+            list-style: none;
+        }
+        .categoria li {
+            margin-bottom: 0.6rem;
+            padding-left: 1.3rem;
+            position: relative;
+        }
+        .categoria li::before {
+            content: "•";
+            color: #b10d2f;
+            font-weight: bold;
+            font-size: 1.1rem;
+            position: absolute;
+            left: 0;
+        }
+
+        .contenedor-pasos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.8rem;
+        }
+        .tarjeta-paso {
+            flex: 1 1 200px;
+            min-width: 180px;
+            max-width: 220px;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1rem;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            border: 2px solid #f0d8cc;
+            text-align: center;
+            transition: all 0.25s ease;
+        }
+        .tarjeta-paso:hover {
+            transform: translateY(-5px);
+            border-color: #b10d2f;
+            box-shadow: 0 12px 24px rgba(177,13,47,0.12);
+        }
+        .imagen-paso {
+            background: #fef1e8;
+            width: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 0.8rem;
+            border: 1px solid #eed3c2;
+        }
+        .imagen-paso img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .titulo-paso {
+            font-weight: 800;
+            font-size: 0.95rem;
+            color: #b10d2f;
+            margin: 0.5rem 0 0.3rem;
+        }
+        .texto-paso {
+            font-size: 0.78rem;
+            color: #4a2e22;
+            line-height: 1.3;
+        }
+
+        .titulo-tienda-digital {
+            color: #b10d2f;
+            font-size: 1.8rem;
+            border-left: 5px solid #b10d2f;
+            padding-left: 1.2rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+        .texto-tienda-digital {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #2e2e2e;
+            line-height: 1.55;
+        }
+        .boton-tienda {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #b10d2f;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            margin-top: 0.5rem;
+        }
+        .boton-tienda:hover {
+            background: #8a0a24;
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(177,13,47,0.3);
+        }
+        .boton-tienda svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+        .contenedor-boton {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .pie-pagina {
+            background: #b10d2f;
+            color: #f9f2ea;
+            padding: 2rem 5% 1.2rem;
+            margin-top: 2.5rem;
+        }
+        .contenedor-pie {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .columna-pie {
+            flex: 1;
+            min-width: 170px;
+        }
+        .columna-pie h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            border-left: 3px solid #ffcdb5;
+            padding-left: 10px;
+            color: #ffdec9;
+        }
+        .columna-pie p, .columna-pie a {
+            color: #f9f2ea;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+        }
+        .columna-pie a:hover {
+            color: #ffcdb5;
+            padding-left: 4px;
+        }
+        
+        .lista-redes {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 0.8rem;
+            list-style: none;
+        }
+        .lista-redes li {
+            display: inline-block;
+        }
+        .lista-redes a {
+            background: rgba(255,248,240,0.12);
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+        }
+        .lista-redes a:hover {
+            background: #ffcdb5;
+            transform: translateY(-2px);
+        }
+        .lista-redes a:hover svg {
+            fill: #b10d2f;
+        }
+        .lista-redes svg {
+            width: 18px;
+            height: 18px;
+            fill: #f9f2ea;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e05a7a;
+            font-size: 0.7rem;
+        }
+
+        @media (max-width: 850px) {
+            .dos-columnas { flex-direction: column; }
+            .separador-vertical { display: none; }
+        }
+        
+        @media (max-width: 550px) {
+            .contenedor { padding: 0 5%; }
+            h1, .titulo-tienda-digital { font-size: 1.5rem; }
+            .texto-tienda-digital { font-size: 0.9rem; }
+            .boton-tienda { font-size: 0.9rem; padding: 0.6rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="barra-navegacion">
+    <div class="grupo-logo">
+        <img class="imagen-logo" src="img/prueba.png" alt="MicheLangelo" onerror="this.src='https://placehold.co/170x54/b10d2f/white?text=MicheLangelo';">
+        <div class="texto-logo">MicheLangelo<span>Vinagre de Granada</span></div>
+    </div>
+    <ul class="enlaces-nav">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#quienes">Quiénes</a></li>
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#producto">Producto</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#tienda-digital">Tienda</a></li>
+    </ul>
+</nav>
+
+<section class="banner-principal" id="inicio">
+    <img class="imagen-banner" src="img/baner.png" alt="Viñales Andalucía" width="1920" height="800" loading="eager">
+</section>
+
+<main class="contenedor">
+    <div class="caja-historia">
+        <div class="dos-columnas">
+            <div class="columna-quienes" id="quienes">
+                <h1>QUIENES SOMOS</h1>
+                <h2>Vinagre MicheLangelo</h2>
+                <p>Somos una empresa familiar con más de <strong>5 años de experiencia</strong> en la producción y comercialización de vinagre de granada. Nuestras raíces están en los viñedos de la frontera andaluza (<strong>Viñales, España</strong>), donde la granada alcanza su máximo esplendor. Combinamos métodos ancestrales con pasión por el sabor auténtico.</p>
+                <p>Apostamos por una producción sostenible, utilizando técnicas tradicionales que conservan las propiedades antioxidantes y nutritivas de la granada. Nuestro compromiso es ofrecer un producto saludable y artesanal, contribuyendo al desarrollo del sector agroalimentario entre España y Cuba.</p>
+            </div>
+            <div class="separador-vertical"></div>
+            <div class="columna-historia" id="historia">
+                <h1>NUESTRA HISTORIA</h1>
+                <p>Michelangelo nace en los parajes de Viñales, un pequeño enclave en la frontera de Andalucía rodeado de viñas y granados. Allí, la tradición vinagrera se fusiona con el carácter único de la granada. Durante más de 5 años hemos perfeccionado el equilibrio perfecto entre acidez y frutosidad.</p>
+                <p>Nuestra materia prima se cultiva y fermenta en España, donde el clima y la tierra otorgan un sabor inconfundible. El producto viaja luego a Cuba, donde realizamos el embotellado, etiquetado y acabado final. Cada botella lleva el alma de Viñales y la calidez de la artesanía cubana.</p>
+                <p>Hoy, con 5 años de trayectoria, nuestro vinagre es un puente entre dos orillas: el legado europeo y la esencia caribeña. Un producto con personalidad propia que sigue creciendo.</p>
+                <p><strong><em>Viñales, frontera de Andalucía — tradición que perdura.</em></strong></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="caja-producto" id="producto">
+        <h1>EL PRODUCTO</h1>
+        <p>Elaborado a partir de granadas seleccionadas en Viñales (Andalucía), nuestro vinagre destaca por su equilibrio entre acidez y un sutil toque afrutado. Su proceso cuidadoso da como resultado un producto versátil, ideal tanto para la cocina diaria como para preparaciones más elaboradas. No es solo un ingrediente, es un detalle que transforma cada plato.</p>
+        <div class="cuadricula-beneficios">
+            <div class="categoria"><h3>Usos</h3><ul><li>Ensaladas frescas</li><li>Carnes y marinados</li><li>Reducciones gourmet</li><li>Bebidas saludables</li></ul></div>
+            <div class="categoria"><h3>Beneficios</h3><ul><li>Rico en antioxidantes</li><li>Favorece la digestión</li><li>Alternativa natural para sazonar</li><li>Fortalece el sistema inmunológico</li></ul></div>
+            <div class="categoria"><h3>Detalles</h3><ul><li>100% natural</li><li>Sin aditivos</li><li>Presentación elegante</li><li>5 años de tradición</li></ul></div>
+        </div>
+    </div>
+
+    <div class="caja-producto" id="proceso">
+        <h1>📍 PROCESO ARTESANAL</h1>
+        <div class="contenedor-pasos">
+            <div class="tarjeta-paso"><div class="imagen-paso"><img src="img/paso 1.png" alt="Selección" loading="lazy"></div><div class="titulo-paso">1. Selección del fruto</div><div class="texto-paso">Granadas cosechadas en Viñales (Andalucía) en su punto óptimo de maduración.</div></div>
+            <div class="tarjeta-paso"><div class="imagen-paso"><img src="img/paso2.png" alt="Fermentación" loading="lazy"></div><div class="titulo-paso">2. Fermentación</div><div class="texto-paso">Transformación natural de azúcares en alcohol y después en ácido acético.</div></div>
+            <div class="tarjeta-paso"><div class="imagen-paso"><img src="img/paso3.png" alt="Maduración" loading="lazy"></div><div class="titulo-paso">3. Maduración</div><div class="texto-paso">Reposo en barricas para desarrollar suavidad y matices frutales.</div></div>
+            <div class="tarjeta-paso"><div class="imagen-paso"><img src="img/paso4.png" alt="Traslado" loading="lazy"></div><div class="titulo-paso">4. Traslado a Cuba</div><div class="texto-paso">El vinagre viaja a nuestra planta en Cuba para embotellado final.</div></div>
+            <div class="tarjeta-paso"><div class="imagen-paso"><img src="img/logo bonito.png" alt="Tradición" loading="lazy"></div><div class="titulo-paso">5. Calidad y tradición</div><div class="texto-paso">Más de 5 años de experiencia garantizan una botella única, con esencia andaluza.</div></div>
+        </div>
+        <p style="margin-top: 1.8rem; text-align: center; font-style: italic; color:#b10d2f;">〝 De los viñales de Andalucía a tu mesa, con 5 años de legado 〞</p>
+    </div>
+
+    <div class="caja-tienda-digital" id="tienda-digital">
+        <h1 class="titulo-tienda-digital"> NUESTRA TIENDA DIGITAL</h1>
+        <p class="texto-tienda-digital">Descubre todos nuestros productos artesanales: vinagre de granada, aceite de oliva virgen extra, vino tinto, leche fresca, huevos camperos y mucho más.</p>
+        <p class="texto-tienda-digital">📦 Envíos a toda España y Cuba. Haz tu pedido fácilmente desde nuestra tienda online.</p>
+        <div class="contenedor-boton">
+            <a href="shop.html" class="boton-tienda">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 2C6.5 2 2 6.5 2 12.031c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.4c1.5.9 3.2 1.4 5 1.4 5.5 0 10-4.5 10-10.1 0-5.4-4.5-9.9-10-9.9z"/></svg>
+                Ir a la Tienda
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+            </a>
+        </div>
+    </div>
+</main>
+
+<footer class="pie-pagina" id="contacto">
+    <div class="contenedor-pie">
+        <div class="columna-pie">
+            <h4>MicheLangelo</h4>
+            <p>Vinagre de granada artesanal. Nacido en los viñales de la frontera de Andalucía (España) y con alma cubana. Más de 5 años elaborando carácter en cada gota.</p>
+        </div>
+        <div class="columna-pie">
+            <h4>Enlaces</h4>
+            <a href="#inicio">Inicio</a>
+            <a href="#quienes">Quiénes Somos</a>
+            <a href="#historia">Historia</a>
+            <a href="#producto">Producto</a>
+            <a href="#proceso">Proceso</a>
+            <a href="#tienda-digital">Tienda</a>
+        </div>
+        <div class="columna-pie">
+            <h4>Contacto</h4>
+            <p>Email: info@michelangelo-vinagre.com</p>
+            <p>WhatsApp: +53 5 1234567</p>
+            <ul class="lista-redes">
+                <li><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg></a></li>
+                <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg></a></li>
+                <li><a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 2C6.5 2 2 6.5 2 12.031c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.4c1.5.9 3.2 1.4 5 1.4 5.5 0 10-4.5 10-10.1 0-5.4-4.5-9.9-10-9.9zm0 18.4c-1.5 0-3-.4-4.3-1.2l-.3-.2-2.9.8.8-2.8-.2-.3c-1-1.4-1.5-3-1.4-4.8.1-4.3 3.6-7.8 7.9-7.8 4.3 0 7.8 3.5 7.8 7.8 0 4.3-3.6 7.7-7.9 7.7zm4.3-5.9c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.5.1-.2.2-.6.7-.8.9-.2.1-.3.2-.6.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.3-1.3-1.5-.1-.2 0-.4.1-.5.1-.1.2-.3.3-.5.1-.2.1-.3.1-.5-.1-.2-.5-1.3-.7-1.8-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9 0 1.1.8 2.2.9 2.3.1.1 1.6 2.4 3.8 3.4.5.2 1 .4 1.5.5.6.1 1.2.1 1.7-.1.5-.2 1.3-.5 1.5-1 .2-.5.2-.9.1-1-.2-.1-.3-.1-.5-.2z"/></svg></a></li>
+                <li><a href="#" aria-label="Correo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        © 2026 MicheLangelo Vinagre de Granada – 5 años de tradición. Viñales, frontera andaluza | Esencia que cruza océanos.
+    </div>
+</footer>
+</body>
+</html>
